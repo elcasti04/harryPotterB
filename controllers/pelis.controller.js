@@ -1,6 +1,5 @@
 import { Peliculas } from "../models/model.js";
-import dotenv from "dotenv";
-dotenv.config();
+
 
 
 export const getPeliculas = async (req, res) => {
