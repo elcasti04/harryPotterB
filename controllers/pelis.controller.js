@@ -59,3 +59,21 @@ export const createPelicula = async (req, res) => {
         console.log(error)
     }
 }
+
+export const deletePeli = async (req, res) => {
+    const { id } = req.params
+
+    try {
+        const delted = await Peliculas.destroy({
+            where: { id }
+        })
+        if(!id) {
+            return { message: 'la pelicula no existe'}
+        }
+        res.status(200).json({
+            message: 'Eliminado con exito'
+        })
+    } catch (error) {
+        console.log(error)
+    }
+}
